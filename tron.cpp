@@ -1,3 +1,19 @@
+/* 
+• Must have g++
+• Install Raylib :
+
+  sudo apt update && sudo apt install libraylib-dev
+
+• To Compile :
+
+  g++ tron.cpp -o tron -lraylib -lGL -lm -lpthread -ldl
+
+• To Run :
+  
+  ./tron
+
+*/
+
 #include "raylib.h"
 #include <vector>
 #include <string>
