@@ -215,3 +215,23 @@ int main() {
     CloseWindow();
     return 0;
 }
+
+
+
+
+/*
+
+bash: ./tron_5: No such file or directory
+wilsony175@penguin:~$ g++ tron_5.cpp -o tron_5 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 
+tron_5.cpp: In function ‘int main()’:
+tron_5.cpp:202:13: error: ‘sprintf’ was not declared in this scope
+  202 |             sprintf(discText, "PRESS SPACE TO FIRE DISC (%d LEFT)", discCount);
+      |             ^~~~~~~
+tron_5.cpp:6:1: note: ‘sprintf’ is defined in header ‘<cstdio>’; did you forget to ‘#include <cstdio>’?
+    5 | #include <cstdlib>
+  +++ |+#include <cstdio>
+    6 | 
+wilsony175@penguin:~$ 
+
+
+*/
