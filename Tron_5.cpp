@@ -198,13 +198,16 @@ int main() {
 
             EndMode3D();
 
+            char discText[64];
+            sprintf(discText, "PRESS SPACE TO FIRE DISC (%d LEFT)", discCount);
+
             if (victory) {
                 DrawRectangle(0,0,screenWidth,screenHeight,Fade(TRON_BLUE_GLOW,0.8f));
                 DrawText("YOU ESCAPED TO REAL WORLD",screenWidth/2-280,screenHeight/2-30,40,BLACK);
             } else {
                 DrawRectangleLines(10,10,screenWidth-20,screenHeight-20,TRON_BLUE_GRID);
                 DrawText("MISSION: COLLECT ALL SYSTEM FILES",30,30,20,BLACK);
-                DrawText("PRESS SPACE TO FIRE DISC (" + std::to_string(discCount) + " LEFT)",30,60,20,TRON_BLUE_GRID);
+                DrawText(discText,30,60,20,TRON_BLUE_GRID);
             }
         EndDrawing();
     }
@@ -212,22 +215,3 @@ int main() {
     CloseWindow();
     return 0;
 }
-
-
-
-
-
-
-/*
-
-
-g++ tron_5.cpp -o tron_5 -lraylib -lGL -lm -lpthread -ldl -lrt -lX11 
-tron_5.cpp: In function ‘int main()’:
-tron_5.cpp:207:62: error: ‘to_string’ is not a member of ‘std’
-  207 |                 DrawText("PRESS SPACE TO FIRE DISC (" + std::to_string(discCount) + " LEFT)",30,60,20,TRON_BLUE_GRID);
-      |                          
-
-
-
-
-*/
